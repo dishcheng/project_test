@@ -8,7 +8,7 @@ VXETable.renderer.add('ForecastFilterInput', {
   renderFilter (renderOpts, params) {
     //error
     return <FilterInput params={ params }></FilterInput>
-    //error
+    //warning
     // return <input/>
   },
   // 重置数据方法
