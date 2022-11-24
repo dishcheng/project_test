@@ -1,16 +1,15 @@
 import { VXETable } from 'vxe-table'
 // @ts-ignore
 import FilterInput from './components/FilterInput.vue'
-// import FilterContent from './components/FilterContent.vue'
-// import FilterComplex from './components/FilterComplex.vue'
-// import FilterExtend from './components/FilterExtend.vue'
 
 // 创建一个简单的输入框筛选
 VXETable.renderer.add('ForecastFilterInput', {
   // 筛选模板
   renderFilter (renderOpts, params) {
-    console.log(1111,params)
-    return <input/>
+    //error
+    return <FilterInput params={ params }></FilterInput>
+    //error
+    // return <input/>
   },
   // 重置数据方法
   filterResetMethod (params) {

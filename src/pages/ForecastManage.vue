@@ -60,7 +60,7 @@ import {
   VxeToolbarInstance
 } from "vxe-table";
 
-import 'src/components/VxeFilterRender/vxeFilter'
+import 'components/VxeFilterRender/vxeFilterABC'
 
 
 export default defineComponent({
