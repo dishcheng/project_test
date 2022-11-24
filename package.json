@@ -32,7 +32,8 @@
     "vue-scrollto": "^2.20.0",
     "vue3-sortable-js": "^1.0.0",
     "vuex": "^4.0.1",
-    "vxe-table": "^4.3.6"
+    "vxe-table": "^4.3.6",
+    "xe-utils": "3.5.7"
   },
   "devDependencies": {
     "@babel/plugin-syntax-jsx": "^7.18.6",
