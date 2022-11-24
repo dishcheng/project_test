@@ -1,0 +1,41 @@
+// app global css in SCSS form
+@font-face {
+  font-family: AmazonEmber_Rg;
+  src: url('./fonts/AmazonEmber_Rg.ttf');
+}
+
+/*// 声明一个应用它的类*/
+body {
+  font-family: 'AmazonEmber_Rg', 'Roboto', '-apple-system', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+//InvMasterManage.vue  edit dialog 拉伸後會被q-header阻擋
+.q-header{
+  z-index: 999;
+}
+.myvxetable-style {
+  font-family: 'AmazonEmber_Rg', 'Roboto', '-apple-system', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+}
+
+.myvxetable-style.vxe-table .vxe-body--column.text-right {
+  text-align: right !important;
+}
+
+.vxe-table--render-default .vxe-cell {
+  padding-left: 3px !important;
+  padding-right: 3px !important;
+}
+
+
+#chartTable {
+  border: 1px solid black;
+  padding: 0;
+  border-collapse: collapse;
+  font-weight: bold
+}
+
+#chartTable tr td {
+  width: 95px;
+  border: 1px solid black;
+  padding: 2px;
+}
