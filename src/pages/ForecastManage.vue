@@ -21,7 +21,6 @@
       :data="tableData"
       height="800"
       :tooltip-config="tableTooltipConfig"
-      :show-footer="true"
     >
       <vxe-column field="id" title="ID" :visible="false"></vxe-column>
 
@@ -214,10 +213,10 @@ export default defineComponent({
 
     onMounted(() => {
       findList()
-      getSimListingActiveStore()
-      nextTick(() => {
-        saleForecastTableRef.value.connect(saleForecastToolbarRef.value)
-      })
+      // getSimListingActiveStore()
+      // nextTick(() => {
+      //   saleForecastTableRef.value.connect(saleForecastToolbarRef.value)
+      // })
     });
 
     const refData = toRefs(state)

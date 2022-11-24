@@ -10,7 +10,7 @@ VXETable.renderer.add('ForecastFilterInput', {
   // 筛选模板
   renderFilter (renderOpts, params) {
     console.log(1111,params)
-    return <FilterInput params={ params }></FilterInput>
+    return <input/>
   },
   // 重置数据方法
   filterResetMethod (params) {
