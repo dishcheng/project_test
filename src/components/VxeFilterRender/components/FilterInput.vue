@@ -1,8 +1,7 @@
 <template>
   <div class="my-filter-input">
-    <vxe-input type="text" v-model="demo1.option.data" placeholder="支持回车筛选"
-               @keyup="keyupEvent"
-               @input="changeOptionEvent"></vxe-input>
+    {{demo1}}
+    <vxe-input type="text" v-model="demo1" placeholder="支持回车筛选" @keyup="keyupEvent" @input="changeOptionEvent"></vxe-input>
   </div>
 </template>
 
@@ -10,16 +9,13 @@
 import { defineComponent, PropType, reactive } from 'vue'
 import { VxeInputEvents, VxeGlobalRendererHandles } from 'vxe-table'
 
-console.log('props')
-
 export default defineComponent({
   name: 'FilterInput',
   props: {
     params: Object as PropType<VxeGlobalRendererHandles.RenderFilterParams>
-    // params: null as any
   },
   setup (props) {
-    console.log('props',props)
+    console.log(props)
     const demo1 = reactive({
       option: null as any
     })

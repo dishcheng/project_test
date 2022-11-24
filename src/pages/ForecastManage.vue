@@ -60,8 +60,6 @@ import {
   VxeToolbarInstance
 } from "vxe-table";
 
-import 'components/VxeFilterRender/vxeFilterABC'
-
 
 export default defineComponent({
   components: {
@@ -92,10 +90,6 @@ export default defineComponent({
           pageSize: 1000,
           totalResult: 0
         },
-        filter: <StringOptions>{
-          type: '',
-          store_code: ''
-        },
         formData: <StringOptions>{
           id: '',
           store: '',
@@ -104,31 +98,11 @@ export default defineComponent({
         },
         activeStores: [],
         showEditRemarkDialog: false,
-        editRemarkFormData: <StringOptions>{
-          id: '',
-          remark: '',
-          remark_bg: '',
-          column: '',
-        },
-        editRow: <StringOptions>{},
-
-        sumTotal: {
-          prior7d_avg_sum: 0,
-          cur6d_avg_sum: 0,
-          qty_2d_sum: 0,
-          qty_1d_sum: 0,
-          qty_0d_sum: 0,
-          total_profit_6d_sum: 0,
-        },
       }
     }
     const state = reactive(getInitState())
 
 
-    const setStoreCodeFilter = (store_code: any) => {
-      state.filter.store_code = store_code
-      confirmFilter()
-    };
 
     const handlePageChange: VxePagerEvents.PageChange = ({currentPage, pageSize}) => {
       state.tablePage.currentPage = currentPage
@@ -159,7 +133,7 @@ export default defineComponent({
 
     const reCreateFilter = () => {
       nextTick(() => {
-        const $table = saleForecastTableRef.value
+        // const $table = saleForecastTableRef.value
         // if ($table) {
         // }
       })
@@ -170,7 +144,6 @@ export default defineComponent({
     };
 
     const resetFilter = () => {
-      state.filter = getInitState().filter
       confirmFilter()
     };
 
@@ -194,23 +167,6 @@ export default defineComponent({
       // console.log(`${column.field} 筛选了数据`)
     }
 
-    const getSimListingActiveStore = () => {
-      // getSimListingActiveStoresApi().then(res => {
-      state.activeStores = [];
-      // })
-    }
-
-    // const openEditDialog = (row: StringOptions) => {
-    //   state.showCreateInputDialog = true;
-    //   state.formMode = 'edit';
-    //   state.formData.id = row.id;
-    //   state.formData.store = row.store;
-    //   state.formData.sku = row.sku;
-    //   state.formData.base = row.base;
-    // }
-
-
-
     onMounted(() => {
       findList()
       // getSimListingActiveStore()
@@ -228,7 +184,6 @@ export default defineComponent({
       findList,
       confirmFilter,
       resetFilter,
-      setStoreCodeFilter,
       filterChangeEvent,
       handlePageChange,
     }

@@ -1,32 +1,38 @@
-import { VXETable } from 'vxe-table'
+import {VXETable} from 'vxe-table'
 // @ts-ignore
 import FilterInput from './components/FilterInput.vue'
+import {h} from 'vue'
 
 // 创建一个简单的输入框筛选
 VXETable.renderer.add('ForecastFilterInput', {
   // 筛选模板
-  renderFilter (renderOpts, params) {
-    //error
-    return <FilterInput params={ params }></FilterInput>
-    //warning
-    // return <input/>
+  renderFilter(renderOpts, renderParams) {
+    //####Test1
+    // Warning: React.jsx: type is invalid -- expected a string (for built-in components)
+    // or a class/function (for composite components)
+    // but got: object.
+    // return <FilterInput params={renderParams}></FilterInput>
+
+    //####Test2
+    //Uncaught (in promise) DOMException: Failed to execute 'setAttribute' on 'Element': '$table'
+    // is not a valid attribute name.
+    return h('FilterInput', renderParams, [])
   },
   // 重置数据方法
-  filterResetMethod (params) {
-    console.log(params)
-    const { options } = params
+  filterResetMethod(params) {
+    const {options} = params
     options.forEach((option) => {
       option.data = ''
     })
   },
   // 重置筛选复原方法（当未点击确认时，该选项将被恢复为默认值）
-  filterRecoverMethod ({ option }) {
+  filterRecoverMethod({option}) {
     option.data = ''
   },
   // 筛选方法
-  filterMethod (params) {
-    const { option, row, column } = params
-    const { data } = option
+  filterMethod(params) {
+    const {option, row, column} = params
+    const {data} = option
     const cellValue = row[column.field]
     if (cellValue) {
       return cellValue.indexOf(data) > -1
