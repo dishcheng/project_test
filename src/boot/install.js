@@ -3,8 +3,7 @@ import 'vxe-table/lib/style.css'
 import 'xe-utils'
 
 import VXETable from 'vxe-table'
-import 'src/components/VxeFilterRender/vxeFilterABC'
-
+import 'components/VxeFilterRender/vxeFilter.js'
 // import ElementPlus from 'element-plus'
 import Bus from '../utils/bus'
 import VueLazyload from 'vue-lazyload'
